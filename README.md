@@ -14,7 +14,9 @@ Run the `build-dynomite` container to compile the Dynomite.
 Clone and then `cd` into the `dynomite` git repo.
 
 ```bash
-mkdir -p ~/repos && git clone https://github.com/Netflix/dynomite.git
+mkdir -p ~/repos/ && cd $_
+
+git clone https://github.com/Netflix/dynomite.git
 
 cd ~/repos/dynomite
 
@@ -49,7 +51,9 @@ The instructions below allow you to manually build the `build-dynomite` image, i
 Clone the `docker-build-dynomite` repo from Github.
 
 ```bash
-mkdir -p ~/repos && git clone https://github.com/DynomiteDB/docker-build-dynomite.git
+mkdir -p ~/repos/ && cd $_
+
+git clone https://github.com/DynomiteDB/docker-build-dynomite.git
 ```
 
 `cd` into the `build-dynomite` directory.
