@@ -16,7 +16,8 @@ MAINTAINER Akbar S. Ahmed <akbar@dynomitedb.com>
 #
 # Working directory (similar to `cd $WORKDIR` for all following commands)
 #
-WORKDIR /src
+#WORKDIR /src
+WORKDIR /build
 
 #
 # Default command

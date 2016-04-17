@@ -21,10 +21,16 @@ git clone https://github.com/Netflix/dynomite.git
 cd ~/repos/dynomite
 
 # Optionally, you can select a specific tag to build
-git checkout tags/v0.5.7
+git checkout tags/v0.5.8
 ```
 
-Build Dynomite.
+Build Dynomite using a tagged version. For example, to build the tagged release `v0.5.7` execute the command below.
+
+```bash
+docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite -v v0.5.7
+```
+
+Build Dynomite using the `dev` branch.
 
 ```bash
 docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite
