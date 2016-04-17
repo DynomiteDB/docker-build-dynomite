@@ -26,11 +26,11 @@ mode="production"
 # Additional make target
 target=""
 
-while getopts "v:dt:" opt; do
+while getopts "v:d:t:" opt; do
     case "$opt" in
 	v)  version=$OPTARG
 		;;
-    d)  mode="debug"
+    d)  mode=$OPTARG
         ;;
     t)  target=$OPTARG
         ;;
@@ -38,7 +38,7 @@ while getopts "v:dt:" opt; do
 done
 
 #
-# Get the source code from GitHub
+# Get the source code
 #
 git clone https://github.com/Netflix/dynomite.git
 cd $BUILD
@@ -49,10 +49,11 @@ else
 	echo "Building branch:  $version"
 fi
 
-if [ "$target" == "clean" ] ; then
-    make clean
-    exit 0;
-fi
+# make clean is no longer necessary as all builds are clean by default
+#if [ "$target" == "clean" ] ; then
+#    make clean
+#    exit 0;
+#fi
 
 #
 # Build dynomite

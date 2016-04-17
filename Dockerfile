@@ -23,7 +23,7 @@ WORKDIR /build
 # Default command
 #
 COPY docker-entrypoint.sh /entrypoint.sh
-COPY deb /
+COPY deb /deb
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD [""]

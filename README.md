@@ -11,7 +11,13 @@ Compiling Dynomite has two discrete steps:
 
 Run the `build-dynomite` container to compile Dynomite.
 
-Build Dynomite using a tagged version. For example, to build the tagged release `v0.5.7` execute the command below.
+`build-dynomite` supports optional flags:
+
+- `-v tag-version`: Specify a tagged release to build based on GitHub tags. If `-v` is not used then the `dev` branch is used for the build. Specifying `-v` without a `tag-version` will result in a build error.
+- `-d [mode]`: Default mode is `production` which disables logging. `debug` mode which causes `dynomite` to output debug level logs. Possible values: `debug`, `log`. `production`.
+- `-t target`: Specify a `make` build target.
+
+Build Dynomite using a tagged version. For example, to build the tagged release `v0.5.8` execute the command below.
 
 ```bash
 docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite -v v0.5.8
@@ -26,13 +32,7 @@ docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite
 Create a debug build.
 
 ```bash
-docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite -d
-```
-
-Clean the build. 
-
-```bash
-docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite -t clean
+docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite -d debug
 ```
 
 # Manually build the `build-dynomite` image
