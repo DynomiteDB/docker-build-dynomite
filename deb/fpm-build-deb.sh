@@ -143,5 +143,3 @@ fpm \
 
 # Run lintian
 lintian *.deb
-
-mv *.deb /src 
