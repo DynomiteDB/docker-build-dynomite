@@ -104,6 +104,27 @@ done
 # Configuration files
 cp -R $BUILD/conf /src/dynomitedb-dynomite/
 
+#
+# Create .tgz package
+#
 cd /src
 tar -czf dynomitedb-dynomite_ubuntu-14.04.4-x64.tgz -C /src dynomitedb-dynomite/
 
+#
+# Build .deb package
+#
+
+# Update .deb build files
+# Set to future version is building against the dev branch
+# TODO: Come up with a better solution for tagging builds against dev branch
+if [ "$version" == "dev" ] ; then
+	version=0.9.9
+else
+	# Strip the leading "v"
+	version=${version:1}
+fi
+export DYNOMITE_VERSION=$version
+sed -i 's/0.0.0/'${version}'/' /deb/changelog
+sed -i 's/0.0.0/'${version}'/' /deb/control
+
+/deb/fpm-build-deb.sh
