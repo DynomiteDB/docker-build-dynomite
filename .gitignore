@@ -4,6 +4,7 @@
 # Temp files
 *.bak
 *.swp
+*~
 
 # Debian/Ubuntu packaging
 deb/get-gpg-key.sh

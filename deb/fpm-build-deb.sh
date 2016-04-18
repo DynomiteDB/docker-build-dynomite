@@ -40,11 +40,6 @@ PIDDIR=${PACKAGE_ROOT}/var/run
 DDB="dynomitedb"
 
 #
-# Remove prior build
-#
-#rm -rf ./tmp
-
-#
 # Create a packaging directory structure for the package
 #
 mkdir -p $PACKAGE_ROOT
@@ -131,6 +126,7 @@ fpm \
 	--directories ${PACKAGE_ROOT}/ \
 	--config-files /etc/dynomitedb/ \
 	--deb-custom-control ${DEB}/control \
+	--deb-changelog ${DEB}/changelog \
 	--before-install ${DEB}/preinst.ex \
 	--after-install ${DEB}/postinst.ex \
 	--before-remove ${DEB}/prerm.ex \

@@ -46,7 +46,7 @@ if [ "$version" != "dev" ] ; then
 	echo "Building tagged version:  $version"
 	git checkout tags/$version
 else
-	echo "Building branch:  $version"
+	echo "Building branch: $version"
 fi
 
 # make clean is no longer necessary as all builds are clean by default
@@ -70,8 +70,6 @@ fi
 
 # Default target == ""
 make $target
-
-# TODO: Create a `make package` target in the upstream repo
 
 # Cleanup prior builds
 rm -f /src/dynomitedb-dynomite_ubuntu-14.04.4-x64.tar.gz
