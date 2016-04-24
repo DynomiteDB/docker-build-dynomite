@@ -10,6 +10,7 @@ set -e
 #
 # Options:
 # -v: tag version
+# -F: fake version (build HEAD, but give .deb package a version)
 # -d: debug
 # -t <target>: add a make target
 #
@@ -21,14 +22,17 @@ OPTIND=1
 
 # If set, then build a specific tag version. If unset, then build dev branch
 version="dev"
+fake_version="0.0.0"
 # If the -d flag is set then create a debug build of dynomite
 mode="production"
 # Additional make target
 target=""
 
-while getopts "v:d:t:" opt; do
+while getopts "v:F:d:t:" opt; do
     case "$opt" in
 	v)  version=$OPTARG
+		;;
+	F)  fake_version=$OPTARG
 		;;
     d)  mode=$OPTARG
         ;;
@@ -114,10 +118,9 @@ tar -czf dynomitedb-dynomite_ubuntu-14.04.4-x64.tgz -C /src dynomitedb-dynomite/
 #
 
 # Update .deb build files
-# Set to future version is building against the dev branch
-# TODO: Come up with a better solution for tagging builds against dev branch
+# The user of this container must set either version or fake_version
 if [ "$version" == "dev" ] ; then
-	version=0.9.9
+	version=${fake_version}
 else
 	# Strip the leading "v"
 	version=${version:1}
