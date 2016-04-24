@@ -76,8 +76,8 @@ fi
 make $target
 
 # Cleanup prior builds
-rm -f /src/dynomitedb-dynomite_ubuntu-14.04.4-x64.tar.gz
-rm -rf /src/dynomitedb-dynomite
+#rm -f /src/dynomitedb-dynomite_ubuntu-14.04.4-x64.tar.gz
+#rm -rf /src/dynomitedb-dynomite
 
 # Create package
 mkdir -p /src/dynomitedb-dynomite
@@ -127,6 +127,8 @@ else
 fi
 export DYNOMITE_VERSION=$version
 sed -i 's/0.0.0/'${version}'/' /deb/changelog
+sed -i 's/0.0.0/'${version}'/' /deb/changelog-debug
 sed -i 's/0.0.0/'${version}'/' /deb/control
+sed -i 's/0.0.0/'${version}'/' /deb/control-debug
 
 /deb/fpm-build-deb.sh

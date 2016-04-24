@@ -1,0 +1,15 @@
+# DynomiteDB Dynomite debug package
+# Ignore excessive lintian warnings
+
+dynomitedb-dynomite-debug: no-copyright-file
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/bin/
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/dynomitedb/
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/dynomitedb/dynomite/
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/sbin/
+dynomitedb-dynomite-debug: file-in-usr-local usr/local/sbin/dynomite-debug
+dynomitedb-dynomite-debug: file-in-unusual-dir usr/local/sbin/dynomite-debug
+dynomitedb-dynomite-debug: file-in-usr-local usr/local/sbin/dynomite-test-debug
+dynomitedb-dynomite-debug: file-in-unusual-dir usr/local/sbin/dynomite-test-debug
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/share/
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/share/man/
+dynomitedb-dynomite-debug: dir-in-usr-local usr/local/share/man/man8/

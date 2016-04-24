@@ -1,0 +1,12 @@
+Package: dynomitedb-dynomite-debug
+Version: 0:0.0.0
+Section: database
+Priority: extra
+Licence: Apache 2.0
+Vendor: DynomiteDB
+Architecture: amd64
+Depends: libc6 (>= 2.14), libssl1.0.0 (>= 1.0.0)
+Maintainer: Akbar S. Ahmed <akbar@dynomitedb.com>
+Homepage: http://www.dynomitedb.com
+Description: Dynomite server debug binaries 
+ Debug binaries for the Dynomite server.
