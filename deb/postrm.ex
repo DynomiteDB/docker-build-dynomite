@@ -18,13 +18,16 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+USER="dynomitedb"
+GROUP="dynomitedb"
+SERVICE="dynomite"
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
         # Delete dynomite user if user exists
         if getent passwd dynomite >/dev/null
         then
-            userdel dynomite >/dev/null
+            userdel ${USER} >/dev/null
         fi
 
 	#
@@ -34,10 +37,10 @@ case "$1" in
 	# Delete dynomite group if group exists        
 	if getent group dynomite >/dev/null
         then
-	    groupdel dynomite >/dev/null
+	    groupdel ${GROUP} >/dev/null
         fi
 
-	update-rc.d -f dynomite remove
+	update-rc.d -f ${SERVICE} remove
     ;;
 
     *)

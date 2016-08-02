@@ -19,6 +19,12 @@ Run the `build-dynomite` container to compile Dynomite.
 - `-d [mode]`: Default mode is `production` which disables logging. `debug` mode which causes `dynomite` to output debug level logs. Possible values: `debug`, `log`. `production`.
 - `-t target`: Specify a `make` build target.
 
+## Current production build
+
+```bash
+docker run -it --rm -v $PWD:/src dynomitedb/build-dynomite -F 0.5.8 -d production
+```
+
 ## Build tagged version
 
 Build Dynomite using a tagged version. For example, to build the tagged release `v0.5.8` execute the command below.

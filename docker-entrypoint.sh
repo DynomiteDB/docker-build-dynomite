@@ -30,10 +30,10 @@ target=""
 
 while getopts "v:F:d:t:" opt; do
     case "$opt" in
-	v)  version=$OPTARG
-		;;
-	F)  fake_version=$OPTARG
-		;;
+    v)  version=$OPTARG
+	;;
+    F)  fake_version=$OPTARG
+	;;
     d)  mode=$OPTARG
         ;;
     t)  target=$OPTARG
@@ -66,7 +66,7 @@ autoreconf -fvi
 
 if [ "$mode" == "debug" ] ; then
     CFLAGS="-ggdb3 -O0" ./configure --enable-debug=full
-elif [ "$mode" == "log" ] ; then
+elif [ "$mode" == "log" ] || [ "$mode" == "production" ] ; then
     ./configure --enable-debug=log
 else
     ./configure --enable-debug=no

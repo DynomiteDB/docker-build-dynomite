@@ -15,16 +15,15 @@
 NAME=dynomite
 DESC="distributed database framework"
 PATH=/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/bin
-PIDFILE=/var/run/dynomitedb-${NAME}.pid
+PIDFILE=/var/run/dynomitedb/${NAME}.pid
 CONFIG=/etc/dynomitedb/${NAME}.yaml
 INIT_OPTIONS=/etc/default/${NAME}
 # RHEL specific file
 #SYSTEM_CONFIG=/etc/sysconfig/${NAME}
 DAEMON=/usr/local/sbin/${NAME}
 DAEMON_OPTS="-d -c ${CONFIG} -p ${PIDFILE}"
-# TODO: Runas USER
-#USER="dynomite"
-#GROUP="dynomite"
+USER="dynomitedb"
+GROUP="dynomitedb"
 RETVAL=0
 
 if [ ! -x $DAEMON ] ; then

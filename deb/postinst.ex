@@ -17,17 +17,22 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-USER="dynomite"
-GROUP="dynomite"
+USER="dynomitedb"
+GROUP="dynomitedb"
 HOME="/usr/local/dynomitedb/home"
 
 case "$1" in
     configure)
 	# TODO: Set permissions
+        mkdir -p /etc/dynomitedb
 	mkdir -p /usr/local/dynomitedb/home
-	chown -R $USER:$GROUP /usr/local/dynomitedb/home
-	#chown $USER:$GROUP /var/lib/redis
-	#chown $USER:$GROUP /var/log/redis
+	mkdir -p /var/log/dynomitedb/dynomite
+	mkdir -p /var/run/dynomitedb
+	chown -R $USER:$GROUP /etc/dynomitedb
+	chown -R $USER:$GROUP /usr/local/dynomitedb
+	chown -R $USER:$GROUP /var/log/dynomitedb
+	chown -R $USER:$GROUP /var/run/dynomitedb
+	chown $USER:$GROUP /etc/default/dynomite
 
 	update-rc.d dynomite defaults
 

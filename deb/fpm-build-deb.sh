@@ -49,7 +49,7 @@ do
 	LINTIAN=${PACKAGE_ROOT}/usr/share/lintian/overrides
 	STATIC=${PACKAGE_ROOT}/usr/local/dynomitedb/${PACKAGE_NAME}
 	LOGS=${PACKAGE_ROOT}/var/log/dynomitedb/${PACKAGE_NAME}
-	PIDDIR=${PACKAGE_ROOT}/var/run
+	PIDDIR=${PACKAGE_ROOT}/var/run/dynomitedb
 
 	DDB="dynomitedb"
 

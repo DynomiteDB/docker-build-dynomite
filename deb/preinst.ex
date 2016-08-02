@@ -13,8 +13,8 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-USER="dynomite"
-GROUP="dynomite"
+USER="dynomitedb"
+GROUP="dynomitedb"
 HOME="/usr/local/dynomitedb/home"
 
 case "$1" in
@@ -34,7 +34,7 @@ case "$1" in
 	# Add dynomite user if user does not exist
 	if ! getent passwd $USER >/dev/null
 	then
-	    adduser --system --disabled-login --ingroup dynomite --no-create-home --home /usr/local/dynomitedb/home --gecos "dynomitedb" --shell /bin/false dynomite >/dev/null
+	    adduser --system --disabled-login --ingroup dynomitedb --no-create-home --home /usr/local/dynomitedb/home --gecos "dynomitedb" --shell /bin/false dynomitedb >/dev/null
 	fi
 
 	# end of NIS tolerance zone
