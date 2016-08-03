@@ -1,6 +1,12 @@
 # IDE
 .idea
 
+# Builds
+dynomitedb-dynomite-debug_0.5.8_amd64.deb
+dynomitedb-dynomite/
+dynomitedb-dynomite_0.5.8_amd64.deb
+dynomitedb-dynomite_ubuntu-14.04.4-x64.tgz
+
 # Temp files
 *.bak
 *.swp
