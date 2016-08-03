@@ -24,8 +24,8 @@ SERVICE="dynomite"
 
 case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-        # Delete dynomite user if user exists
-        if getent passwd dynomite >/dev/null
+        # Delete dynomitedb user if user exists
+        if getent passwd ${USER} >/dev/null
         then
             userdel ${USER} >/dev/null
         fi
@@ -34,8 +34,8 @@ case "$1" in
 	# Group must be deleted AFTER use
 	#
 
-	# Delete dynomite group if group exists        
-	if getent group dynomite >/dev/null
+	# Delete dynomitedb group if group exists
+	if getent group ${GROUP} >/dev/null
         then
 	    groupdel ${GROUP} >/dev/null
         fi
